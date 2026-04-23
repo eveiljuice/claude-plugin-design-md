@@ -2,3 +2,6 @@
 Thumbs.db
 .claude/*.local.md
 node_modules/
+.npmrc
+.npmrc.*
+*.tgz

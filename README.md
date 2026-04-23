@@ -44,9 +44,15 @@ If `DESIGN.md` already exists the command asks before overwriting.
 Run without Claude Code — no install, no clone. Requires Node 18+.
 
 ```bash
+npx -y claude-plugin-design-md
+npx -y claude-plugin-design-md atmospheric-glass
+npx -y claude-plugin-design-md paws-and-paths --out design/DESIGN.md
+```
+
+Or pull straight from GitHub (useful for unreleased changes on `main`):
+
+```bash
 npx -y github:eveiljuice/claude-plugin-design-md
-npx -y github:eveiljuice/claude-plugin-design-md atmospheric-glass
-npx -y github:eveiljuice/claude-plugin-design-md paws-and-paths --out design/DESIGN.md
 ```
 
 Options:
