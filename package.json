@@ -1,6 +1,6 @@
 {
   "name": "claude-plugin-design-md",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Claude Code plugin + standalone CLI that scaffolds DESIGN.md files following the google-labs-code/design.md spec.",
   "type": "module",
   "bin": {
