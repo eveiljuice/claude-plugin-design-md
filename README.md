@@ -81,6 +81,22 @@ npx @google/design.md export --format dtcg DESIGN.md
 npx @google/design.md spec          # prints the full spec for agent prompts
 ```
 
+## Releases
+
+Each tag matching `v*` triggers `.github/workflows/publish.yml`, which verifies
+that the tag matches `package.json` and publishes to npm with npm provenance
+signing.
+
+To cut a new version:
+
+```bash
+npm version patch          # or minor / major
+git push --follow-tags
+```
+
+GitHub Actions picks up the tag, publishes to npm, and the new version is live
+under `npx -y claude-plugin-design-md`.
+
 ## Layout
 
 ```
