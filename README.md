@@ -1,4 +1,4 @@
-# design-md
+# DESIGN.md
 
 A Claude Code plugin that scaffolds a `DESIGN.md` in the current project. The
 file follows the [google-labs-code/design.md](https://github.com/google-labs-code/design.md)
