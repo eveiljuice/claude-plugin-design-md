@@ -6,49 +6,58 @@ specification — YAML design tokens plus markdown rationale — so any AI codin
 agent can read a single document and produce UI that matches the intended
 visual identity.
 
-## Install
+## Use
 
-Install this plugin locally from inside Claude Code:
+### As a Claude Code plugin
 
-```text
-/plugin install C:/Users/ok/plugins/design-md
-```
-
-Or register the containing directory as a marketplace so you can install it by
-name:
+Install from this GitHub repo by registering it as a marketplace:
 
 ```text
-/plugin marketplace add C:/Users/ok/plugins
-/plugin install design-md@plugins
+/plugin marketplace add eveiljuice/claude-plugin-design-md
+/plugin install design-md@claude-plugin-design-md
 ```
 
-To develop against it without installing, point the CLI at the folder:
+Or point Claude Code at a local clone:
 
-```bash
-claude --plugin C:/Users/ok/plugins/design-md
+```text
+/plugin install /absolute/path/to/claude-plugin-design-md
 ```
 
-## Commands
-
-### `/design-md:create [source]`
-
-Creates a `DESIGN.md` in the current working directory.
-
-| Argument | Behaviour |
-|----------|-----------|
-| _(none)_ or `blank` | Writes the bundled starter template (`templates/DESIGN.md`) — every required section with placeholder prose and a neutral default token palette. |
-| `atmospheric-glass` | Downloads the official *Atmospheric Glass* example. |
-| `paws-and-paths` | Downloads the official *Paws & Paths* example. |
-| `totality-festival` | Downloads the official *Totality Festival* example. |
-
-If `DESIGN.md` already exists the command will ask before overwriting.
-
-Examples:
+Then, inside any project, run:
 
 ```text
 /design-md:create
 /design-md:create atmospheric-glass
 ```
+
+| Argument | Behaviour |
+|----------|-----------|
+| _(none)_ or `blank` | Writes the bundled starter template — every required section with placeholder prose and a neutral default token palette. |
+| `atmospheric-glass` | Downloads the official *Atmospheric Glass* example. |
+| `paws-and-paths` | Downloads the official *Paws & Paths* example. |
+| `totality-festival` | Downloads the official *Totality Festival* example. |
+
+If `DESIGN.md` already exists the command asks before overwriting.
+
+### As a standalone CLI (`npx`)
+
+Run without Claude Code — no install, no clone. Requires Node 18+.
+
+```bash
+npx -y github:eveiljuice/claude-plugin-design-md
+npx -y github:eveiljuice/claude-plugin-design-md atmospheric-glass
+npx -y github:eveiljuice/claude-plugin-design-md paws-and-paths --out design/DESIGN.md
+```
+
+Options:
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--out <path>` | `./DESIGN.md` | Where to write the file |
+| `--force`, `-f` | off | Overwrite without prompting |
+| `--help`, `-h` | — | Show usage |
+
+Valid sources: `blank` (default), `atmospheric-glass`, `paws-and-paths`, `totality-festival`.
 
 ## After the file exists
 

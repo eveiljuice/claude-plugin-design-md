@@ -1,0 +1,42 @@
+{
+  "name": "claude-plugin-design-md",
+  "version": "0.1.0",
+  "description": "Claude Code plugin + standalone CLI that scaffolds DESIGN.md files following the google-labs-code/design.md spec.",
+  "type": "module",
+  "bin": {
+    "design-md-init": "bin/cli.js"
+  },
+  "files": [
+    ".claude-plugin",
+    "commands",
+    "templates",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "design.md",
+    "claude-code",
+    "claude-code-plugin",
+    "scaffold",
+    "cli"
+  ],
+  "author": {
+    "name": "Timo Elsesser",
+    "email": "mannitiger13@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eveiljuice/claude-plugin-design-md.git"
+  },
+  "homepage": "https://github.com/eveiljuice/claude-plugin-design-md#readme",
+  "bugs": {
+    "url": "https://github.com/eveiljuice/claude-plugin-design-md/issues"
+  }
+}
