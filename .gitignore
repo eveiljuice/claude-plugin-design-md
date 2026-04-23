@@ -1,0 +1,4 @@
+.DS_Store
+Thumbs.db
+.claude/*.local.md
+node_modules/

@@ -1,0 +1,18 @@
+{
+  "name": "design-md",
+  "version": "0.1.0",
+  "description": "Scaffold DESIGN.md files that follow the google-labs-code/design.md spec (YAML design tokens + markdown rationale for AI coding agents).",
+  "author": {
+    "name": "Timo Elsesser",
+    "email": "mannitiger13@gmail.com"
+  },
+  "homepage": "https://github.com/google-labs-code/design.md",
+  "license": "MIT",
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "design.md",
+    "scaffold",
+    "template"
+  ]
+}
