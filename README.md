@@ -65,6 +65,65 @@ Options:
 
 Valid sources: `blank` (default), `atmospheric-glass`, `paws-and-paths`, `totality-festival`.
 
+### With any other AI coding agent
+
+The CLI works from any agent that can run shell commands (Cursor, Codex, Cline,
+Continue, Windsurf, Aider, Copilot CLI, Gemini CLI, Zed, OpenCode, …). To teach
+the agent **when** to reach for it, drop the skill file at
+[`skills/create-design-md.md`](./skills/create-design-md.md) into whatever
+instruction layer your tool uses:
+
+<details>
+<summary><b>Cursor</b> — save as <code>.cursor/rules/create-design-md.mdc</code></summary>
+
+```yaml
+---
+description: Scaffold a DESIGN.md via the claude-plugin-design-md CLI
+globs: "**/*"
+alwaysApply: false
+---
+```
+Then paste the body of `skills/create-design-md.md` underneath.
+</details>
+
+<details>
+<summary><b>Codex / Amp / Jules / Gemini CLI / Aider / Zed / Copilot</b> — append to <code>AGENTS.md</code></summary>
+
+These tools all read `AGENTS.md` at the project root. Append a section:
+
+```markdown
+## Scaffolding DESIGN.md
+
+When asked to create a DESIGN.md, a design system spec, or a YAML design-tokens
+document, run `npx -y claude-plugin-design-md [blank|atmospheric-glass|paws-and-paths|totality-festival]`
+in the project root. Do not write the file by hand — the templates are versioned
+upstream.
+```
+</details>
+
+<details>
+<summary><b>Cline</b> — save as <code>.clinerules/create-design-md.md</code></summary>
+
+Paste the body of `skills/create-design-md.md` directly — Cline reads every file
+in the `.clinerules/` directory as part of its system prompt.
+</details>
+
+<details>
+<summary><b>OpenCode</b> — add to <code>.opencode/opencode.json</code></summary>
+
+```json
+{
+  "instructions": ["https://raw.githubusercontent.com/eveiljuice/claude-plugin-design-md/main/skills/create-design-md.md"]
+}
+```
+</details>
+
+<details>
+<summary><b>Windsurf</b> — save as <code>.windsurf/rules/create-design-md.md</code></summary>
+
+Paste the body of `skills/create-design-md.md` directly.
+</details>
+
 ## After the file exists
 
 Validate it against the spec using the upstream CLI (no install required):
@@ -101,9 +160,11 @@ under `npx -y claude-plugin-design-md`.
 
 ```
 design-md/
-├── .claude-plugin/plugin.json
-├── commands/create.md
-├── templates/DESIGN.md
+├── .claude-plugin/plugin.json      # Claude Code plugin manifest
+├── commands/create.md              # Claude Code slash command
+├── skills/create-design-md.md      # Universal skill for any AI agent
+├── templates/DESIGN.md             # Bundled starter template
+├── bin/cli.js                      # Standalone npx CLI
 └── README.md
 ```
 

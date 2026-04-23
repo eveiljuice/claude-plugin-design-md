@@ -9,6 +9,7 @@
   "files": [
     ".claude-plugin",
     "commands",
+    "skills",
     "templates",
     "bin",
     "README.md",
