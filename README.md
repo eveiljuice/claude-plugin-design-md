@@ -14,7 +14,7 @@ Install from this GitHub repo by registering it as a marketplace:
 
 ```text
 /plugin marketplace add eveiljuice/claude-plugin-design-md
-/plugin install design-md@claude-plugin-design-md
+/plugin install design-md@eveiljuice
 ```
 
 Or point Claude Code at a local clone:

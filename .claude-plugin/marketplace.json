@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "eveiljuice",
+  "description": "Timo Elsesser's personal Claude Code plugins",
+  "owner": {
+    "name": "Timo Elsesser",
+    "email": "mannitiger13@gmail.com",
+    "url": "https://github.com/eveiljuice"
+  },
+  "plugins": [
+    {
+      "name": "design-md",
+      "description": "Scaffold DESIGN.md files that follow the google-labs-code/design.md spec (YAML design tokens + markdown rationale for AI coding agents).",
+      "source": "./",
+      "category": "design",
+      "homepage": "https://github.com/eveiljuice/claude-plugin-design-md"
+    }
+  ]
+}
